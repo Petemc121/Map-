@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <style>
+           #map {
+               height:100%;
+               width:100%;
+           }
+
+           #coordinates {
+               
+              margin-top:20px;
+              margin-left:50px;
+           }
+
+           #coordinatesCon {
+               display:flex;
+               
+           }
+       </style>
+    </head>
+    <body>
+      <img id="map" src = "map.jpg"></img>
+
+      <div id='coordinatesCon'><h1>Coordinates: </h1> <h1 id="coordinates"></h1></div>
+        <script>
+
+            function init() {
+                var map = document.getElementById("map")
+                map.onmousemove = showCoordinates;
+            }
+
+            function showCoordinates(eventObj) {
+                var Coord = document.getElementById("coordinates");
+                var x = eventObj.pageX;
+                var y = eventObj.pageY;
+                Coord.innerHTML = x + ", " + y;
+            }
+
+            window.onload = init()
+
+        </script>
+    </body>
+</html>
